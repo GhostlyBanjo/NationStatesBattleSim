@@ -13,4 +13,7 @@ The program calculates different factors, physical force count, troop morale, le
 #Calculating your Forces
 This doesn't mean your total entire military.  Simply put, it's how many troops you're throwing at the specific battle.
 #Calculating Morale
-Your troops need to have hope.  If they've been on a constant losing streak, they'll be less likely to fight their best.  
+Your troops need to have hope.  If they've been on a constant losing streak, they'll be less likely to fight their best.  Each division/squad/etc starts at 100 Morale.  With each loss, subtract 10.  With each victory, add 10.  
+
+#Calculating everything else
+Right now everything else is arbitrary and I really need help figuring it all out.
