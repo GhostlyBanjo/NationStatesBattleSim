@@ -1,7 +1,9 @@
 # NationStatesBattleSim
 A Battle Simulator for Nation States roleplay
 
-
+#Download
+Dropbox https://www.dropbox.com/s/om0buzhkhmmqias/NationStatesBattleSim.jar?dl=0
+GitHub https://github.com/GhostlyBanjo/NationStatesBattleSim/blob/master/NationStatesBattleSim.jar
 
 # How to use
 There are many, many factors to war.  Often in roleplaying, it's difficult to fairly decide the outcome of a battle.  
