@@ -1,8 +1,9 @@
 # NationStatesBattleSim
 A Battle Simulator for Nation States roleplay
 
-#Download
+#Download from DropBox
 Dropbox https://www.dropbox.com/s/om0buzhkhmmqias/NationStatesBattleSim.jar?dl=0
+#Download from GitHub
 GitHub https://github.com/GhostlyBanjo/NationStatesBattleSim/blob/master/NationStatesBattleSim.jar
 
 # How to use
