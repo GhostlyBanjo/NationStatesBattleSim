@@ -1,4 +1,4 @@
-package com.ge.NSBS.src;
+package src;
 
 /**
  * Created by Forrest on 2/28/2015.

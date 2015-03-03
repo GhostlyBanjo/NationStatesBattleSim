@@ -1,5 +1,4 @@
-import com.ge.NSBS.src.Simulation;
-import com.ge.NSBS.src.Team;
+package src;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
