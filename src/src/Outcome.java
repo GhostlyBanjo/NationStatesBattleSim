@@ -5,21 +5,31 @@ package src;
  */
 public class Outcome {
 
-        private Team w, l;
-    private int sl,sw;
+        private Team one, two;
+    private int s2,s1;
+    private OutcomeType o;
 
     public Outcome(){
 
     }
 
-    public Outcome(Team w, int scorew, Team l, int scorel) {
-        this.w = w;
-        this.l = l;
-        this.sw = scorew;
-        this.sl = scorel;
+    public Outcome(OutcomeType o, Team w, int scorew, Team l, int scorel) {
+        this.o=o;
+        this.one = w;
+        this.two = l;
+        this.s1 = scorew;
+        this.s2 = scorel;
     }
     public String toString(){
-        return w.getName()+" ("+sw+")" + " has defeated " + l.getName()+"("+sl+")";
+        switch (o){
+            case WIN:return one.getName() + " has defeated " + two.getName() + "!" + "\n Score: " + s1 +" | "+ s2;
+            case DRAW:
+                break;
+            case LOSE:
+                break;
+
+        }
+        return one.getName() + " has defeated " + two.getName() + "!" + "\n Score: " + s1 +" | "+ s2;
     }
 
 }

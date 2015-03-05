@@ -30,6 +30,9 @@ public class Team {
     public int getIntel() {
         return intel;
     }
+    public void kill(int x){
+        this.forces-=x;
+    }
 
 
     public boolean isHomeTeam() {

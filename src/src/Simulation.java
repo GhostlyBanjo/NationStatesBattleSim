@@ -12,7 +12,7 @@ public class Simulation {
     private Team[] team = new Team[2];
     private int[] wins = new int[2];
     private int[] score = new int[2];
-    private boolean go;
+    private boolean go = true;
     private int homeTeam;
 
 
@@ -24,14 +24,16 @@ public class Simulation {
 
     public Outcome Simulate() {
 
-        int rand = (int) (Math.random() * 1000);
+        int rand;
 
         int winner = 0;
+        int loser = 1;
 
 
-        Outcome outcome;
+        Outcome finalOutcome;
+        OutcomeType outcome = OutcomeType.DRAW;
         do {
-
+            rand = (int) (Math.random() * 1000);
             score[homeTeam] += 5;
             score[0] += (10 * ((int) (team[0].getForces() / team[1].getForces())));
             score[1] += (10 * ((int) (team[1].getForces() / team[0].getForces())));
@@ -44,43 +46,54 @@ public class Simulation {
             Compare(team[0].getTrainingRating(), team[1].getTrainingRating());
             Compare(team[0].getTech(), team[1].getTech());
 
-            System.out.println(team[0] + " " + score[0]);
-            System.out.println(team[1] + " " + score[1]);
+            System.out.println(team[0].getName() + " " + score[0]);
+            System.out.println(team[1].getName() + " " + score[1]);
 
             int total = score[1] + score[0];
             double ratio = ((double) score[0] / total);
 
-
             System.out.println("Rand = " + rand);
-            outcome = new Outcome();
+            finalOutcome = new Outcome();
             if (rand >= ratio * 1000) {
-                outcome = new Outcome(team[1], score[1], team[0], score[0]);
-                winner = 1;
-            } else if (rand < ratio * 1000) {
 
-                outcome = new Outcome(team[0], score[0], team[1], score[1]);
+                team[0].kill((int)(team[0].getForces()*(ratio*.1)));
+                winner = 1;
+                loser = 0;
+            } else if (rand < ratio * 1000) {
                 winner = 0;
+                loser = 1;
             }
             String[] options = {
                     "Continue!", "Retreat!"
             };
-            if (JOptionPane.showOptionDialog(null, outcome.toString(), "Retreat?", YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]) == 1) {
-                go = false;
-            }
+
             wins[winner]++;
             score = new int[2];
+            if(team[0].getForces() <=0){
+
+                outcome = OutcomeType.LOSE;
+                go = false;
+            }
+            if(team[1].getForces() <=0){
+                outcome = OutcomeType.WIN;
+                go = false;
+
+            }
+            finalOutcome = new Outcome(outcome, team[winner], wins[winner], team[loser], wins[loser]);
+            JOptionPane.showMessageDialog(null, finalOutcome.toString());
+            if (JOptionPane.showOptionDialog(null, team[0].getName() + ", what do you do?", "Retreat?", YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]) == 1) {
+
+                go = false;
+                outcome = OutcomeType.LOSE;
+            }
+            if (JOptionPane.showOptionDialog(null, team[1].getName() + ", what do you do?", "Retreat?", YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]) == 1) {
+
+                go = false;
+                outcome = OutcomeType.WIN;
+            }
         } while (go);
 
-        if (winner == 0) {
-            return new Outcome(team[0], wins[0], team[1], wins[1]);
-        }
-        if (winner == 1) {
-            return new Outcome(team[1], wins[1], team[0], wins[0]);
-        }
-        if (winner == 0) {
-            return new Outcome(team[0], wins[0], team[1], wins[1]);
-        }
-        return null;
+        return finalOutcome;
     }
 
 
@@ -101,4 +114,7 @@ public class Simulation {
         return -1;
     }
 
+}
+enum OutcomeType{
+    WIN, LOSE, DRAW
 }
