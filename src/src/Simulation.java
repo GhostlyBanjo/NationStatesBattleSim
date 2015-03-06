@@ -58,17 +58,19 @@ public class Simulation {
 
                 winner = 1;
                 loser = 0;
+               System.out.println(team[0].kill((int) Math.abs(Math.random() * ((team[0].getForces() / team[1].getForces()) * score[1]))));
             } else if (rand < ratio * 1000) {
 
                 winner = 0;
                 loser = 1;
+                System.out.println(team[1].kill((int) Math.abs(Math.random() * ((team[1].getForces() / team[0].getForces()) * score[0]))));
             }
             String[] options = {
                     "Continue!", "Retreat!"
             };
 
-            team[0].kill((int) Math.abs(Math.random() * ((team[0].getForces() / team[1].getForces()) * score[1])));
-            team[1].kill((int) Math.abs(Math.random() * ((team[1].getForces() / team[0].getForces()) * score[0])));
+
+
 
 
             if(team[0].getForces() <=0 && go){

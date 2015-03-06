@@ -30,8 +30,9 @@ public class Team {
     public int getIntel() {
         return intel;
     }
-    public void kill(int x){
+    public int kill(int x){
         this.forces-=x;
+    return x;
     }
 
 
