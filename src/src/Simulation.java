@@ -49,17 +49,17 @@ public class Simulation {
             System.out.println(team[0].getName() + " " + score[0]);
             System.out.println(team[1].getName() + " " + score[1]);
 
-            int total = score[1] + score[0];
-            double ratio = ((double) score[0] / total);
+            double ratio = ((double) score[0] / (score[1] + score[0]));
 
             System.out.println("Rand = " + rand);
             finalOutcome = new Outcome();
             if (rand >= ratio * 1000) {
 
-                team[0].kill((int)(team[0].getForces()*(ratio*.1)));
+
                 winner = 1;
                 loser = 0;
             } else if (rand < ratio * 1000) {
+
                 winner = 0;
                 loser = 1;
             }
@@ -67,30 +67,32 @@ public class Simulation {
                     "Continue!", "Retreat!"
             };
 
+            team[0].kill((int) Math.abs(Math.random() * ((team[0].getForces() / team[1].getForces()) * score[1])));
+            team[1].kill((int) Math.abs(Math.random() * ((team[1].getForces() / team[0].getForces()) * score[0])));
+
+
+            if(team[0].getForces() <=0 && go){
+
+                outcome = OutcomeType.LOSE;
+                team[0].kill(team[0].getForces());
+                go = false;
+            }
+            if(team[1].getForces() <=0 && go){
+                outcome = OutcomeType.WIN;
+                team[1].kill(team[1].getForces());
+                go = false;
+
+            }
             wins[winner]++;
-            score = new int[2];
-            if(team[0].getForces() <=0){
-
-                outcome = OutcomeType.LOSE;
-                go = false;
-            }
-            if(team[1].getForces() <=0){
-                outcome = OutcomeType.WIN;
-                go = false;
-
-            }
-            finalOutcome = new Outcome(outcome, team[winner], wins[winner], team[loser], wins[loser]);
+            finalOutcome = new Outcome(outcome, team[0], wins[0], team[1], wins[1]);
             JOptionPane.showMessageDialog(null, finalOutcome.toString());
-            if (JOptionPane.showOptionDialog(null, team[0].getName() + ", what do you do?", "Retreat?", YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]) == 1) {
-
-                go = false;
+            if (go &&JOptionPane.showOptionDialog(null, team[0].getName() + ", what do you do?", "Retreat?", YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]) == 1) {
                 outcome = OutcomeType.LOSE;
             }
-            if (JOptionPane.showOptionDialog(null, team[1].getName() + ", what do you do?", "Retreat?", YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]) == 1) {
-
-                go = false;
+            if (go && JOptionPane.showOptionDialog(null, team[1].getName() + ", what do you do?", "Retreat?", YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]) == 1) {
                 outcome = OutcomeType.WIN;
             }
+            score = new int[2];
         } while (go);
 
         return finalOutcome;
