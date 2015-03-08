@@ -1,10 +1,7 @@
 # NationStatesBattleSim
 NationStates Battle Simulator is a roleplaying supplement and Battle Simulator for Nation States.  It's designed to take input from the user for different factors of battle: Force Count, Morale, Technology, Training, Combat Experience, Logistics, and Intel, and simulate the outcome of a skirmish to be roleplayed out after.  This allows for constructive roleplay, as the outcome of the battle isn't decided by story arc alone.  
 
-#Download from DropBox
-Dropbox https://www.dropbox.com/s/om0buzhkhmmqias/NationStatesBattleSim.jar?dl=0
-#Download from GitHub
-GitHub https://github.com/GhostlyBanjo/NationStatesBattleSim/blob/master/NationStatesBattleSim.jar?raw=true
+
 
 # How to use
 There are many, many factors to war.  Often in roleplaying, it's difficult to fairly decide the outcome of a battle.  
@@ -58,6 +55,15 @@ Fighting on your home soil gives you an advantage.
 Now, battles are dynamic.  This is shown in the simulator by the intermittent outcome screen, then "Continue?/Retreat?" dialouges.  If you're losing too many forces, you can leave.  
 
 As I've been reading it, the Score value is based on per hour of fighting, so each intermittent "Win" is basically dominating the fight for that one hour.
+
+#Download from GitHub 
+Most recent version:
+GitHub https://github.com/GhostlyBanjo/NationStatesBattleSim/blob/master/NationStatesBattleSim.jar?raw=true
+
+#Download from DropBox
+Updated less:
+Dropbox https://www.dropbox.com/s/om0buzhkhmmqias/NationStatesBattleSim.jar?dl=0
+
 
 #FAQ
 
