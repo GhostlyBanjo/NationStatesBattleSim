@@ -45,7 +45,7 @@ Logistics:
 This value is the ability for the non-combat personnel's ability to move supplies to and from the front line.  
 
 Intel:
-How much the intelligence the nation has over the other.  If one country has been flying spy planes over the other for years, they'd have the higher value.  Can also be measured by how much crtical information you know about the enemy fo the battlefield.
+How much the intelligence the nation has over the other.  If one country has been flying spy planes over the other for years, they'd have the higher value.  Can also be measured by how much crtical information you know about the enemy or the battlefield.
 
 Home Team Advantage:
 Fighting on your home soil gives you an advantage.  
