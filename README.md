@@ -75,3 +75,5 @@ A: The reason the NS values aren't compatible with this version is that Nation S
 #Contact
 
 Questions or Comments? Direct them to ghostlyBanjo@gmail.com
+
+I'm also online most of the day on #NSBS at webchat.esper.net
