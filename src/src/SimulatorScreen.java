@@ -1,6 +1,7 @@
 package src;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -8,6 +9,7 @@ import java.awt.event.ActionListener;
  * Created by Forrest on 2/28/2015.
  */
 public class SimulatorScreen {
+    public static JFrame simFrame;
     private Simulation simulation;
     private JTextField t1Name;
     private JLabel team1;
@@ -22,12 +24,8 @@ public class SimulatorScreen {
     private JPanel outputPane;
     private JLabel teamOneMorale;
     private JTextField t1MoraleInput;
-    private JTextField t1Tech;
-    private JTextField t1TR;
-    private JTextField t1Exp;
-    private JTextField t1LR;
-    private JTextField t1Supply;
-    private JTextField t1Intel;
+    private JSlider t1Tech;
+    private JSlider t1TR;
     private JLabel t1labels;
     private JLabel eff;
     private JLabel nword;
@@ -37,12 +35,11 @@ public class SimulatorScreen {
     private JLabel no;
     private JLabel noMoreVariablesplz;
     private JLabel cantSayTheNWord;
-    private JTextField t2Tech;
-    private JTextField t2TR;
-    private JTextField t2CE;
-    private JTextField t2L;
-    private JTextField t2S;
-    private JTextField t2I;
+    private JSlider t2Tech;
+    private JSlider  t2TR;
+    private JSlider  t2CE;
+    private JSlider  t2L;
+    private JSlider  t2I;
     private JLabel notavirus;
     private JLabel noplzno;
     private JLabel plzgo;
@@ -50,8 +47,19 @@ public class SimulatorScreen {
     private JTabbedPane tabbedPane;
     private JPanel outputPanel;
     private JTextArea outputArea;
+    private JSlider t1CE;
+    private JSlider t1L;
+    private JSlider t1I;
+    private JButton resetButton;
+    private JComboBox homeTeam;
+    private JButton Example;
+    private int homeTeamVal = 0;
 
     public SimulatorScreen() {
+
+
+        if(homeTeam.getSelectedItem() == "Team Two")
+            homeTeamVal = 1;
         runButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -60,24 +68,25 @@ public class SimulatorScreen {
                         t1Name.getText(),
                         Integer.parseInt(t1SizeInput.getText()),
                         Integer.parseInt(t1MoraleInput.getText()),
-                        Integer.parseInt(t1Tech.getText()),
-                        Integer.parseInt(t1TR.getText()),
-                        Integer.parseInt(t1Exp.getText()),
-                        Integer.parseInt(t1LR.getText()),
-                                                Integer.parseInt(t1Intel.getText()),
+                        t1Tech.getValue(),
+                        t1TR.getValue(),
+                        t1CE.getValue(),
+                        t1L.getValue(),
+                        t1I.getValue(),
                         true,
                         true)
                         ,new Team(
                         t2Name.getText(),
                         Integer.parseInt(t2ForceCount.getText()),
                         Integer.parseInt(t2Morale.getText()),
-                        Integer.parseInt(t2Tech.getText()),
-                        Integer.parseInt(t2TR.getText()),
-                        Integer.parseInt(t2CE.getText()),
-                        Integer.parseInt(t2L.getText()),
-                                                Integer.parseInt(t2I.getText()),
-                        true,true),
-                        0
+                        t2Tech.getValue(),
+                        t2TR.getValue(),
+                        t2CE.getValue(),
+                        t2L.getValue(),
+                        t2I.getValue(),
+                        true,
+                        true),
+                        homeTeamVal
                 );
                 outputArea.setText(simulation.Simulate().toString());
                     JOptionPane.showMessageDialog(null, outputArea.getText());
@@ -86,6 +95,36 @@ public class SimulatorScreen {
                     exception.printStackTrace();
                     JOptionPane.showMessageDialog(null, "Try inputing the right things");
                 }
+            }
+        });
+        resetButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                t1CE.setValue(5);
+                t1I.setValue(5);
+                t1L.setValue(5);
+                t1TR.setValue(5);
+                t1Tech.setValue(5);
+                t2CE.setValue(5);
+                t2I.setValue(5);
+                t2L.setValue(5);
+                t2TR.setValue(5);
+                t2Tech.setValue(5);
+
+            }
+        });
+        Example.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                t1Name.setText("'Murica");
+                t2Name.setText("Anti-'Murica");
+                t1Tech.setValue(9);
+                t2Tech.setValue(4);
+                t1MoraleInput.setText("125");
+                t2Morale.setText("100");
+                t1SizeInput.setText("200");
+                t2ForceCount.setText("100");
+
             }
         });
     }
@@ -97,10 +136,10 @@ public class SimulatorScreen {
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("SimulatorScreen");
-        frame.setContentPane(new SimulatorScreen().tabbedPane);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
+        simFrame = new JFrame("SimulatorScreen");
+        simFrame.setContentPane(new SimulatorScreen().tabbedPane);
+        simFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        simFrame.pack();
+        simFrame.setVisible(true);
     }
 }
