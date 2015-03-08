@@ -14,7 +14,7 @@ This doesn't mean your total entire military.  Simply put, it's how many troops 
 Your troops need to have hope.  If they've been on a constant losing streak, they'll be less likely to fight their best.  Each division/squad/etc starts at 100 Morale.  With each loss, subtract 10.  With each victory, add 10.  
 
 #Calculating everything else
-Everything else is treated on a scale of 1-10.  Now, before you go and ask questions, pay attention.  I made this for people who awant to act like adults for roleplaying.  Quantifying arbitrary values is hard, so what I'll due it describe what each parameter does.  It's up to ou and your enemy to decide the actual values.
+Everything else is treated on a scale of 1-10.  Now, before you go and ask questions, pay attention.  I made this for people who awant to act like adults for roleplaying.  Quantifying arbitrary values is hard, so what I'll summarize describe what each parameter represents.  It's up to you and your enemy to decide the actual values.
 
 
 Technology:
