@@ -66,4 +66,6 @@ Q: Why can't I use the Nation States stats?
 A: The reason the NS values aren't compatible with this version is that Nation States is a country simulator,  not a military simulator.  Almost all of the values on Nation States have nothing to do militaries, which is why it's set up as such.  Maybe later, a version will be release that has integration with the NS stats, but for now, this is a roleplaying supplement, not an extension of NationStates itself.
 
 
-If there are any questions at all, direct them to ghostlyBanjo@gmail.com
+#Contact
+
+Questions or Comments? Direct them to ghostlyBanjo@gmail.com
