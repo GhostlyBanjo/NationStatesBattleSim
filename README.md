@@ -1,5 +1,5 @@
 # NationStatesBattleSim
-NationStates Battle Simulator is a roleplaying supplement and a Battle Simulator for Nation States roleplay.  It's designed to take input from the user from different factors of battle: Force Count, Morale, Technology, Training, Combat Experience, Logistics, and Intel, and simulate the outcome of a skirmish to be roleplayed out after.  This allows for constructive rolepaly, as the outcome of the battle isn't decided by story arc alone.  Please note, the reason the NS values aren't compatible with this version is that Nation States is a COUNTRY simulator,  not a military simulator.  Almost all of the values on Nation States have nothing to do militaries, which is why it's set up as such.  Maybe later, a version will be release that has integration with the NS stats, but for now, this is a roleplaying supplement, not an extension of NationStates itself.
+NationStates Battle Simulator is a roleplaying supplement and Battle Simulator for Nation States.  It's designed to take input from the user for different factors of battle: Force Count, Morale, Technology, Training, Combat Experience, Logistics, and Intel, and simulate the outcome of a skirmish to be roleplayed out after.  This allows for constructive roleplay, as the outcome of the battle isn't decided by story arc alone.  
 
 #Download from DropBox
 Dropbox https://www.dropbox.com/s/om0buzhkhmmqias/NationStatesBattleSim.jar?dl=0
@@ -58,6 +58,12 @@ Fighting on your home soil gives you an advantage.
 Now, battles are dynamic.  This is shown in the simulator by the intermittent outcome screen, then "Continue?/Retreat?" dialouges.  If you're losing too many forces, you can leave.  
 
 As I've been reading it, the Score value is based on per hour of fighting, so each intermittent "Win" is basically dominating the fight for that one hour.
+
+#FAQ
+
+Q: Why can't I use the Nation States stats?
+
+A: The reason the NS values aren't compatible with this version is that Nation States is a country simulator,  not a military simulator.  Almost all of the values on Nation States have nothing to do militaries, which is why it's set up as such.  Maybe later, a version will be release that has integration with the NS stats, but for now, this is a roleplaying supplement, not an extension of NationStates itself.
 
 
 If there are any questions at all, direct them to ghostlyBanjo@gmail.com
