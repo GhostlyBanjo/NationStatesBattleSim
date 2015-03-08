@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="NationStatesBattleSim">
+    <output-path>$PROJECT_DIR$/../../Dropbox</output-path>
+    <root id="archive" name="NationStatesBattleSim.jar">
+      <element id="module-output" name="NationStatesBattleSim" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>

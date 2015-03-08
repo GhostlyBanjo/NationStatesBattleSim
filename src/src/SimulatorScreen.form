@@ -11,19 +11,35 @@
     </properties>
     <border type="none"/>
     <children>
-      <grid id="ba726" binding="inputPanel" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
+      <grid id="ba726" binding="inputPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
         <constraints>
           <tabbedpane title="Input"/>
         </constraints>
         <properties/>
         <border type="none"/>
         <children>
+          <toolbar id="8572f" binding="toolBar">
+            <constraints border-constraint="North"/>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="e61ca" class="javax.swing.JButton" binding="resetButton">
+                <constraints/>
+                <properties>
+                  <text value="Reset Simulator"/>
+                </properties>
+              </component>
+              <component id="e4a71" class="javax.swing.JButton" binding="Example">
+                <constraints/>
+                <properties>
+                  <text value="Example"/>
+                </properties>
+              </component>
+            </children>
+          </toolbar>
           <grid id="27dc6" binding="panel1" layout-manager="GridLayoutManager" row-count="18" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
-            <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
+            <constraints border-constraint="Center"/>
             <properties/>
             <border type="none"/>
             <children>
@@ -330,29 +346,6 @@
               </component>
             </children>
           </grid>
-          <toolbar id="8572f">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="-1" height="20"/>
-              </grid>
-            </constraints>
-            <properties/>
-            <border type="none"/>
-            <children>
-              <component id="e61ca" class="javax.swing.JButton" binding="resetButton">
-                <constraints/>
-                <properties>
-                  <text value="Reset Simulator"/>
-                </properties>
-              </component>
-              <component id="e4a71" class="javax.swing.JButton" binding="Example">
-                <constraints/>
-                <properties>
-                  <text value="Example"/>
-                </properties>
-              </component>
-            </children>
-          </toolbar>
         </children>
       </grid>
       <grid id="2dc6c" binding="outputPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -373,6 +366,29 @@
               <text value="Uhhhhh"/>
             </properties>
           </component>
+        </children>
+      </grid>
+      <grid id="102e" binding="optinonPanel" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <tabbedpane title="Options"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="1201d" class="javax.swing.JButton" binding="enableSadStatesModeButton" default-binding="true">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Enable Sad-States mode (Cannot be undone)"/>
+            </properties>
+          </component>
+          <vspacer id="f8ac">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </vspacer>
         </children>
       </grid>
     </children>

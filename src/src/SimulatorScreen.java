@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
  * Created by Forrest on 2/28/2015.
  */
 public class SimulatorScreen {
+    private  static JLabel background=new JLabel(new ImageIcon("imgs/For Sadia!.jpeg"));
     public static JFrame simFrame;
     private Simulation simulation;
     private JTextField t1Name;
@@ -53,9 +54,16 @@ public class SimulatorScreen {
     private JButton resetButton;
     private JComboBox homeTeam;
     private JButton Example;
+    private JPanel optinonPanel;
+    private JButton enableSadStatesModeButton;
+    private JToolBar toolBar;
     private int homeTeamVal = 0;
 
     public SimulatorScreen() {
+
+
+        toolBar.setFloatable(false);
+        toolBar.setOpaque(false);
 
 
         if(homeTeam.getSelectedItem() == "Team Two")
@@ -127,6 +135,16 @@ public class SimulatorScreen {
 
             }
         });
+
+        enableSadStatesModeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                panel1.setBackground(new Color(0,0,0,0));
+                toolBar.setBackground(new Color(0,0,0,0));
+
+                inputPanel.add(background);
+            }
+        });
     }
 
     private void createUIComponents() {
@@ -141,5 +159,7 @@ public class SimulatorScreen {
         simFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         simFrame.pack();
         simFrame.setVisible(true);
+
     }
+
 }
