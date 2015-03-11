@@ -22,8 +22,8 @@ public class Outcome {
     }
     public String toString(){
         if(o == OutcomeType.WIN)
-            return one.getName() + " has defeated " + two.getName() + "!" + "\n Score: " + s1 +" | "+ s2 + "\n Force: " + one.getForces() + "|" + two.getForces();
-        if(o == OutcomeType.LOSE) return one.getName() + " was defeated by " + two.getName() + "!" + "\n Score: " + s1 +" | "+ s2 + "\n Force: " + one.getForces() + "|" + two.getForces();
+            return one.getName() + " has defeated " + two.getName() + "!" + "\n Score: " + s1 +" | "+ s2;// + "\n Force: " + one.getForces() + "|" + two.getForces();
+        if(o == OutcomeType.LOSE) return one.getName() + " was defeated by " + two.getName() + "!" + "\n Score: " + s1 +" | "+ s2;// + "\n Force: " + one.getForces() + "|" + two.getForces();
         else
         return "It's a Draw!" + "\n Score: " + s1 +" | "+ s2 + "\n Force: " + one.getForces() + "|" + two.getForces();
     }

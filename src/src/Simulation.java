@@ -88,13 +88,13 @@ public class Simulation {
 
                 winner = 1;
                 loser = 0;
-                System.out.println(team[0].kill((int) (Math.random() * ((double) ((double) team[0].getForces() / (double) team[1].getForces()) * score[1]))));
+                System.out.println(team[0].kill((int) (Math.random() * (((double) team[1].getForces() / (double) team[0].getForces())))));
                 outcome = OutcomeType.LOSE;
             } else if (rand < ratio * 1000) {
 
                 winner = 0;
                 loser = 1;
-                System.out.println(team[1].kill((int) (Math.random() * ((double) ((double) team[1].getForces() / (double) team[0].getForces()) * score[0]))));
+                System.out.println(team[1].kill((int) (Math.random() * ((double) ((double) team[0].getForces() / (double) team[1].getForces())))));
                 outcome = OutcomeType.WIN;
             }
             String[] options = {
@@ -119,15 +119,6 @@ public class Simulation {
             }
             wins[winner]++;
             finalOutcome = new Outcome(outcome, team[0], wins[0], team[1], wins[1]);
-            JOptionPane.showMessageDialog(null, finalOutcome.toString());
-            if (go &&JOptionPane.showOptionDialog(null, team[0].getName() + ", what do you do?", "Retreat?", YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]) == 1) {
-                outcome = OutcomeType.LOSE;
-                go = false;
-            }
-            if (go && JOptionPane.showOptionDialog(null, team[1].getName() + ", what do you do?", "Retreat?", YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]) == 1) {
-                outcome = OutcomeType.WIN;
-                go = false;
-            }
             score = new int[2];
         } while (go);
 

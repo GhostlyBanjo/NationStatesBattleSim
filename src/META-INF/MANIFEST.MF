@@ -1,4 +1,4 @@
 Manifest-Version: 1.0
 Class-Path: src
-Main-Class: src.SimulatorScreen
+Main-Class: src.Launcher
 
