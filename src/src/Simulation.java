@@ -1,9 +1,5 @@
 package src;
 
-import javax.swing.*;
-
-import static javax.swing.JOptionPane.YES_NO_OPTION;
-
 /**
  * Created by Forrest on 2/28/2015.
  */
@@ -32,7 +28,7 @@ public class Simulation {
 
         Outcome finalOutcome;
         OutcomeType outcome = OutcomeType.DRAW;
-        do {
+
             rand = (int) (Math.random() * 1000);
             score[homeTeam] += 5;
             score[0] += (10 * ((int) (team[0].getForces() / team[1].getForces())));
@@ -54,48 +50,43 @@ public class Simulation {
             System.out.println("Rand = " + rand);
             finalOutcome = new Outcome();
             if (rand >= ratio * 1000) {
-
-
                 winner = 1;
                 loser = 0;
-               System.out.println(team[0].kill((int) Math.abs(Math.random() * ((team[0].getForces() / team[1].getForces()) * score[1]))));
+               System.out.println(team[0].kill((int) (Math.abs(Math.random() * ((double)team[0].getForces() * (1-ratio))))));
+                outcome = OutcomeType.LOSE;
             } else if (rand < ratio * 1000) {
 
                 winner = 0;
                 loser = 1;
-                System.out.println(team[1].kill((int) Math.abs(Math.random() * ((team[1].getForces() / team[0].getForces()) * score[0]))));
+                System.out.println(team[1].kill((int) (Math.abs(Math.random() * ((double)team[1].getForces() * (1-ratio))))));
+                outcome = OutcomeType.WIN;
             }
-            String[] options = {
-                    "Continue!", "Retreat!"
-            };
 
 
 
 
 
-            if(team[0].getForces() <=0 && go){
+            if(team[0].getForces() <=0){
 
                 outcome = OutcomeType.LOSE;
                 team[0].kill(team[0].getForces());
-                go = false;
+                SimulatorScreen.Stop();
             }
-            if(team[1].getForces() <=0 && go){
+            if(team[1].getForces() <=0){
                 outcome = OutcomeType.WIN;
                 team[1].kill(team[1].getForces());
-                go = false;
+                SimulatorScreen.Stop();
 
             }
             wins[winner]++;
             finalOutcome = new Outcome(outcome, team[0], wins[0], team[1], wins[1]);
-            JOptionPane.showMessageDialog(null, finalOutcome.toString());
-            if (go &&JOptionPane.showOptionDialog(null, team[0].getName() + ", what do you do?", "Retreat?", YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]) == 1) {
-                outcome = OutcomeType.LOSE;
-            }
-            if (go && JOptionPane.showOptionDialog(null, team[1].getName() + ", what do you do?", "Retreat?", YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]) == 1) {
-                outcome = OutcomeType.WIN;
-            }
             score = new int[2];
-        } while (go);
+            try{
+            Thread.sleep(100);}
+            catch(java.lang.InterruptedException e){
+
+            }
+
 
         return finalOutcome;
     }

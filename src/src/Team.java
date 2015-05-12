@@ -58,7 +58,7 @@ public class Team {
         return name;
     }
 
-    public Team(String name, int forces, int morale, int tech, int trainingRating, int experience, int logisticsRating, int intel, boolean homeTeam, boolean takesPOW) {
+    public Team(String name, int forces, int morale, int tech, int trainingRating, int experience, int logisticsRating, int intel) {
         this.name = name;
         this.forces = forces;
         this.morale = morale;
@@ -66,8 +66,7 @@ public class Team {
         this.trainingRating = trainingRating;
         this.experience = experience;
         this.logisticsRating = logisticsRating;
-        this.homeTeam = homeTeam;
-        this.takesPOW = takesPOW;
+
 
         this.intel = intel;
     }

@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
  * Created by Forrest on 2/28/2015.
  */
 public class SimulatorScreen {
+    private static boolean run = true;
     private Simulation simulation;
     private JTextField t1Name;
     private JLabel team1;
@@ -19,7 +20,6 @@ public class SimulatorScreen {
     private JTextField t2ForceCount;
     private JPanel panel1;
     private JButton runButton;
-    private JPanel outputPane;
     private JLabel teamOneMorale;
     private JTextField t1MoraleInput;
     private JTextField t1Tech;
@@ -50,37 +50,55 @@ public class SimulatorScreen {
     private JTabbedPane tabbedPane;
     private JPanel outputPanel;
     private JTextArea outputArea;
+    private JTextField t2name;
+    private JTextField t1name;
+    private JTextField t1fc;
+    private JSlider t1m;
+    private JSlider t1t;
+    private JSlider t1tr;
+    private JSlider t1ce;
+    private JSlider t1l;
+    private JSlider t1i;
+    private JTextField t2fc;
+    private JSlider t2m;
+    private JSlider t2t;
+    private JSlider t2tr;
+    private JSlider t2ce;
+    private JSlider t2l;
+    private JSlider t2i;
+    private JTextArea outputText;
+    private JScrollPane scrollPane;
 
     public SimulatorScreen() {
+        outputText.setText("This is the output screen");
         runButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try{
                 simulation = new Simulation(new Team(
-                        t1Name.getText(),
-                        Integer.parseInt(t1SizeInput.getText()),
-                        Integer.parseInt(t1MoraleInput.getText()),
-                        Integer.parseInt(t1Tech.getText()),
-                        Integer.parseInt(t1TR.getText()),
-                        Integer.parseInt(t1Exp.getText()),
-                        Integer.parseInt(t1LR.getText()),
-                                                Integer.parseInt(t1Intel.getText()),
-                        true,
-                        true)
+                        t1name.getText(),
+                        Integer.parseInt(t1fc.getText()),
+                        t1m.getValue(),
+                        t1t.getValue(),
+                        t1tr.getValue(),
+                        t1ce.getValue(),
+                        t1l.getValue(),
+                        t1i.getValue())
                         ,new Team(
-                        t2Name.getText(),
-                        Integer.parseInt(t2ForceCount.getText()),
-                        Integer.parseInt(t2Morale.getText()),
-                        Integer.parseInt(t2Tech.getText()),
-                        Integer.parseInt(t2TR.getText()),
-                        Integer.parseInt(t2CE.getText()),
-                        Integer.parseInt(t2L.getText()),
-                                                Integer.parseInt(t2I.getText()),
-                        true,true),
+                        t2name.getText(),
+                        Integer.parseInt(t2fc.getText()),
+                        t2m.getValue(),
+                        t2t.getValue(),
+                        t2tr.getValue(),
+                        t2ce.getValue(),
+                        t2l.getValue(),
+                        t2i.getValue()),
                         0
                 );
-                outputArea.setText(simulation.Simulate().toString());
-                    JOptionPane.showMessageDialog(null, outputArea.getText());
+
+                    do{
+                       addNewText();
+                    }while(run);
                 }
                 catch(NumberFormatException exception){
                     exception.printStackTrace();
@@ -102,5 +120,16 @@ public class SimulatorScreen {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+    }
+
+    public static void out(String in){
+
+    }
+    public static void Stop(){
+        run = false;
+    }
+
+    public void addNewText(){
+        outputText.append(simulation.Simulate().toString());
     }
 }
