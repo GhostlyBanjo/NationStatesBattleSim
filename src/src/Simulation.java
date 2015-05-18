@@ -30,16 +30,46 @@ public class Simulation {
         OutcomeType outcome = OutcomeType.DRAW;
 
             rand = (int) (Math.random() * 1000);
+            int one, two;
             score[homeTeam] += 5;
             score[0] += (10 * ((int) (team[0].getForces() / team[1].getForces())));
             score[1] += (10 * ((int) (team[1].getForces() / team[0].getForces())));
 
 
             CompareMorale(team[0].getMorale(), team[1].getMorale());
-            Compare(team[0].getIntel(), team[1].getIntel());
-            Compare(team[0].getLogisticsRating(), team[1].getLogisticsRating());
-            Compare(team[0].getExperience(), team[1].getExperience());
-            Compare(team[0].getTrainingRating(), team[1].getTrainingRating());
+
+
+            one = team[0].getIntel(); two = team[1].getIntel();
+            score[0]+=(7*((int)one/two));
+            score[1]+=(7*((int)two/one));
+            if(one>two)
+                score[0]++;
+            if(one<two)
+                score[1]++;
+
+            one = team[0].getLogisticsRating(); two = team[1].getLogisticsRating();
+            score[0]+=(7*((int)one/two));
+            score[1]+=(7*((int)two/one));
+            if(one>two)
+                score[0]++;
+            if(one<two)
+                score[1]++;
+
+            one = team[0].getExperience(); two = team[1].getExperience();
+            score[0]+=(5*((int)one/two));
+            score[1]+=(5*((int)two/one));
+            if(one>two)
+                score[0]++;
+            if(one<two)
+                score[1]++;
+
+            one = team[0].getTrainingRating(); two = team[1].getTrainingRating();
+            score[0]+=(5*((int)one/two));
+            score[1]+=(5*((int)two/one));
+            if(one>two)
+                score[0]++;
+            if(one<two)
+                score[1]++;
             Compare(team[0].getTech(), team[1].getTech());
 
             System.out.println(team[0].getName() + " " + score[0]);
@@ -52,13 +82,21 @@ public class Simulation {
             if (rand >= ratio * 1000) {
                 winner = 1;
                 loser = 0;
+<<<<<<< HEAD
                System.out.println(team[0].kill((int) (Math.abs(Math.random() * ((double)team[0].getForces() * (1-ratio))))));
+=======
+                System.out.println(team[0].kill((int) (Math.random() * (((double) team[1].getForces() / (double) team[0].getForces())))));
+>>>>>>> origin/master
                 outcome = OutcomeType.LOSE;
             } else if (rand < ratio * 1000) {
 
                 winner = 0;
                 loser = 1;
+<<<<<<< HEAD
                 System.out.println(team[1].kill((int) (Math.abs(Math.random() * ((double)team[1].getForces() * (1-ratio))))));
+=======
+                System.out.println(team[1].kill((int) (Math.random() * ((double) ((double) team[0].getForces() / (double) team[1].getForces())))));
+>>>>>>> origin/master
                 outcome = OutcomeType.WIN;
             }
 
@@ -69,13 +107,23 @@ public class Simulation {
             if(team[0].getForces() <=0){
 
                 outcome = OutcomeType.LOSE;
+<<<<<<< HEAD
                 team[0].kill(team[0].getForces());
                 SimulatorScreen.Stop();
+=======
+                System.out.println(team[0].kill(-1 * (int) Math.abs(team[0].getForces())));
+                go = false;
+>>>>>>> origin/master
             }
             if(team[1].getForces() <=0){
                 outcome = OutcomeType.WIN;
+<<<<<<< HEAD
                 team[1].kill(team[1].getForces());
                 SimulatorScreen.Stop();
+=======
+                System.out.println(team[1].kill(-1 * (int) Math.abs(team[1].getForces())));
+                go = false;
+>>>>>>> origin/master
 
             }
             wins[winner]++;
@@ -100,8 +148,8 @@ public class Simulation {
 
     public int Compare(int one, int two){
 
-        score[0]+=(5*((int)one/two));
-        score[1]+=(5*((int)two/one));
+        score[0]+=(2*((int)one/two));
+        score[1]+=(2*((int)two/one));
         if(one>two)
             return 0;
         if(one<two)

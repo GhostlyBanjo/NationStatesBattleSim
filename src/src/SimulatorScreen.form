@@ -11,19 +11,39 @@
     </properties>
     <border type="none"/>
     <children>
-      <grid id="ba726" binding="inputPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
+      <grid id="ba726" binding="inputPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
         <constraints>
           <tabbedpane title="Input"/>
         </constraints>
         <properties/>
         <border type="none"/>
         <children>
+<<<<<<< HEAD
           <grid id="27dc6" binding="panel1" layout-manager="GridLayoutManager" row-count="16" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+=======
+          <toolbar id="8572f" binding="toolBar">
+            <constraints border-constraint="North"/>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="e61ca" class="javax.swing.JButton" binding="resetButton">
+                <constraints/>
+                <properties>
+                  <text value="Reset Simulator"/>
+                </properties>
+              </component>
+              <component id="e4a71" class="javax.swing.JButton" binding="Example">
+                <constraints/>
+                <properties>
+                  <text value="Example"/>
+                </properties>
+              </component>
+            </children>
+          </toolbar>
+          <grid id="27dc6" binding="panel1" layout-manager="GridLayoutManager" row-count="18" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+>>>>>>> origin/master
             <margin top="0" left="0" bottom="0" right="0"/>
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
+            <constraints border-constraint="Center"/>
             <properties/>
             <border type="none"/>
             <children>
@@ -52,6 +72,17 @@
                   <text value="Team One Morale"/>
                 </properties>
               </component>
+<<<<<<< HEAD
+=======
+              <component id="87726" class="javax.swing.JTextField" binding="t1MoraleInput">
+                <constraints>
+                  <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+>>>>>>> origin/master
               <component id="dc94d" class="javax.swing.JLabel" binding="t1labels">
                 <constraints>
                   <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
@@ -140,6 +171,7 @@
                   <text value="Team Two Technology"/>
                 </properties>
               </component>
+<<<<<<< HEAD
               <component id="bf57d" class="javax.swing.JLabel" binding="noplzno">
                 <constraints>
                   <grid row="12" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
@@ -234,6 +266,150 @@
                   <maximum value="10"/>
                   <minimum value="1"/>
                   <value value="5"/>
+=======
+              <component id="b40e2" class="javax.swing.JLabel" binding="cantSayTheNWord">
+                <constraints>
+                  <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Team Two Training Rating"/>
+                </properties>
+              </component>
+              <component id="8161b" class="javax.swing.JLabel" binding="plzgo">
+                <constraints>
+                  <grid row="10" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Team Two Combat Experience"/>
+                </properties>
+              </component>
+              <component id="2e9cf" class="javax.swing.JLabel" binding="noMoreVariablesplz">
+                <constraints>
+                  <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Team Two Technology"/>
+                </properties>
+              </component>
+              <component id="bf57d" class="javax.swing.JLabel" binding="noplzno">
+                <constraints>
+                  <grid row="12" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Team Two Logistics"/>
+                </properties>
+              </component>
+              <component id="3a9dd" class="javax.swing.JLabel" binding="notavirus">
+                <constraints>
+                  <grid row="14" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Team Two Intel"/>
+                </properties>
+              </component>
+              <component id="3de62" class="javax.swing.JSlider" binding="t2Tech">
+                <constraints>
+                  <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <maximum value="10"/>
+                  <value value="5"/>
+                  <valueIsAdjusting value="false"/>
+                </properties>
+              </component>
+              <component id="1eca5" class="javax.swing.JSlider" binding="t1Tech">
+                <constraints>
+                  <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <maximum value="10"/>
+                  <value value="5"/>
+                </properties>
+              </component>
+              <component id="46dca" class="javax.swing.JSlider" binding="t1CE">
+                <constraints>
+                  <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <maximum value="10"/>
+                  <value value="5"/>
+                </properties>
+              </component>
+              <component id="d39cf" class="javax.swing.JSlider" binding="t1L">
+                <constraints>
+                  <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <maximum value="10"/>
+                  <value value="5"/>
+                </properties>
+              </component>
+              <component id="67e09" class="javax.swing.JSlider" binding="t1I">
+                <constraints>
+                  <grid row="15" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <maximum value="10"/>
+                  <value value="5"/>
+                </properties>
+              </component>
+              <component id="2adff" class="javax.swing.JSlider" binding="t1TR">
+                <constraints>
+                  <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <maximum value="10"/>
+                  <value value="5"/>
+                </properties>
+              </component>
+              <component id="1c6db" class="javax.swing.JSlider" binding="t2CE">
+                <constraints>
+                  <grid row="11" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <maximum value="10"/>
+                  <value value="5"/>
+                </properties>
+              </component>
+              <component id="e163c" class="javax.swing.JSlider" binding="t2L">
+                <constraints>
+                  <grid row="13" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <maximum value="10"/>
+                  <value value="5"/>
+                </properties>
+              </component>
+              <component id="6c061" class="javax.swing.JSlider" binding="t2I">
+                <constraints>
+                  <grid row="15" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <maximum value="10"/>
+                  <value value="5"/>
+                </properties>
+              </component>
+              <component id="ef59e" class="javax.swing.JSlider" binding="t2TR">
+                <constraints>
+                  <grid row="9" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <maximum value="10"/>
+                  <value value="5"/>
+                </properties>
+              </component>
+              <component id="8c00f" class="javax.swing.JComboBox" binding="homeTeam">
+                <constraints>
+                  <grid row="16" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <model>
+                    <item value="Select Home Team"/>
+                    <item value="None"/>
+                    <item value="Team One"/>
+                    <item value="Team Two"/>
+                  </model>
+>>>>>>> origin/master
                 </properties>
               </component>
               <component id="b4df" class="javax.swing.JSlider" binding="t2tr">
@@ -341,6 +517,29 @@
               </component>
             </children>
           </scrollpane>
+        </children>
+      </grid>
+      <grid id="102e" binding="optinonPanel" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <tabbedpane title="Options"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="1201d" class="javax.swing.JButton" binding="enableSadStatesModeButton" default-binding="true">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Enable Sad-States mode (Cannot be undone)"/>
+            </properties>
+          </component>
+          <vspacer id="f8ac">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </vspacer>
         </children>
       </grid>
     </children>

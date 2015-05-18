@@ -21,9 +21,17 @@ public class Outcome {
         this.s2 = scorel;
     }
     public String toString(){
+<<<<<<< HEAD
         if(o == OutcomeType.WIN){ WIN:return one.getName() + " has defeated " + two.getName() + "!" + "\n Score: " + s1 +" | "+ s2 + "\n Force: " + one.getForces() + "|" + two.getForces();}
         else if(o == OutcomeType.LOSE){return one.getName() + " was defeated by " + two.getName() + "!" + "\n Score: " + s1 +" | "+ s2 + "\n Force: " + one.getForces() + "|" + two.getForces();}
         else return "Stalemate \n Score: " + s1 +" | "+ s2 + "\n Force: " + one.getForces() + "|" + two.getForces();
+=======
+        if(o == OutcomeType.WIN)
+            return one.getName() + " has defeated " + two.getName() + "!" + "\n Score: " + s1 +" | "+ s2;// + "\n Force: " + one.getForces() + "|" + two.getForces();
+        if(o == OutcomeType.LOSE) return one.getName() + " was defeated by " + two.getName() + "!" + "\n Score: " + s1 +" | "+ s2;// + "\n Force: " + one.getForces() + "|" + two.getForces();
+        else
+        return "It's a Draw!" + "\n Score: " + s1 +" | "+ s2 + "\n Force: " + one.getForces() + "|" + two.getForces();
+>>>>>>> origin/master
     }
 
 }
